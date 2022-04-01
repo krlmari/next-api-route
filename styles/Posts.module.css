@@ -1,0 +1,22 @@
+.posts__post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  max-width: 40vw;
+}
+
+.posts__post :last-child {
+  margin-bottom: 0;
+}
+
+.posts__image {
+  position: relative;
+  width: 40vw;
+  height: 55vh;
+}
+
+.posts__title {
+  text-align: center;
+}
