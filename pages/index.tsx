@@ -28,7 +28,7 @@ const Home = ({ posts }) => {
     setDescriptionFilter(value);
   };
 
-  const filteredPosts = useFilters(posts, {
+  const { result } = useFilters(posts, {
     sort: isAscending ? SortingType.ASC : SortingType.DESC,
     filter: {
       name: "description",
@@ -67,7 +67,7 @@ const Home = ({ posts }) => {
           </label>
         </div>
 
-        <Posts posts={filteredPosts} />
+        <Posts posts={result} />
       </main>
 
       <footer className={styles.footer}></footer>

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { IOptions, IPost, SortingType } from "../types";
 
 export const useFilters = (posts: IPost[], option: IOptions) => {
-  const filteredPosts = useMemo(
+  const result = useMemo(
     () =>
       posts
         .filter((post) => post[option.filter.name].includes(option.filter.value))
@@ -12,5 +12,5 @@ export const useFilters = (posts: IPost[], option: IOptions) => {
     [posts, option]
   );
 
-  return filteredPosts;
+  return { result };
 };
