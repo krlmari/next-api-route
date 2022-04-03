@@ -51,13 +51,19 @@ const Home = ({ posts }) => {
             <input
               type="checkbox"
               checked={isAscending}
+              name="sort"
               onChange={handleSortChange}
               className={styles.sort__input}
             />
           </label>
           <label>
             Фильтрация постов по строке: &emsp;
-            <input type="text" value={descriptionFilter} onChange={handleFilterChange} />
+            <input
+              type="text"
+              value={descriptionFilter}
+              name="filter"
+              onChange={handleFilterChange}
+            />
           </label>
         </div>
 
