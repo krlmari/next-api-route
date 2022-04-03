@@ -29,3 +29,17 @@ p {
   margin: 0;
   padding: 0;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgb(178, 182, 185);
+}
+
+input {
+  border-color: aliceblue;
+}

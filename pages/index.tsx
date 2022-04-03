@@ -1,9 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Posts from "@components/Posts";
-
 import { useFilters } from "@hooks/useFilters";
 import { SortingType } from "../types";
 
@@ -47,8 +45,21 @@ const Home = ({ posts }) => {
       </Head>
 
       <main className={styles.main}>
-        <input type="checkbox" checked={isAscending} onChange={handleSortChange} />
-        <input type="text" value={descriptionFilter} onChange={handleFilterChange} />
+        <div className={styles.inputs}>
+          <label className={styles.sort}>
+            Сортировка: &emsp; {isAscending ? "↑" : "↓"}
+            <input
+              type="checkbox"
+              checked={isAscending}
+              onChange={handleSortChange}
+              className={styles.sort__input}
+            />
+          </label>
+          <label>
+            Фильтрация постов по строке: &emsp;
+            <input type="text" value={descriptionFilter} onChange={handleFilterChange} />
+          </label>
+        </div>
 
         <Posts posts={filteredPosts} />
       </main>
