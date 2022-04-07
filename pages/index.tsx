@@ -4,10 +4,10 @@ import styles from "../styles/Home.module.css";
 import Posts from "@components/Posts";
 import { useFilters } from "@hooks/useFilters";
 import { SortingType } from "../types";
+import axios from "axios";
 
 export const getStaticProps = async () => {
-  const response = await fetch(`${process.env.API_HOST}/api/posts`);
-  const data = await response.json();
+  const { data } = await axios.get(`${process.env.API_HOST}/api/posts`);
 
   return {
     props: { posts: data },
